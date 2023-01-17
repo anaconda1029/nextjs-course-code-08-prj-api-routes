@@ -13,7 +13,8 @@ function CommentList(props) {
           <p>{item.name}</p>
           <p>{item.source}</p>
           <p>{item.token}</p>
-          {/* <div>
+          {/* <p>{item.email}</p>
+          <div>
             By <address>{item.name}</address>
           </div> */}
         </li>

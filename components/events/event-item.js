@@ -31,7 +31,7 @@ function EventItem(props) {
           </div>
           <div className={classes.address}>
             <AddressIcon />
-            <address>{formattedAddress}</address>
+            {/* <address>{formattedAddress}</address> */}
           </div>
         </div>
         <div className={classes.actions}>
