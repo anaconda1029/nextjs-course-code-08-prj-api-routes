@@ -1,4 +1,16 @@
-import { connectDatabase, insertDocument } from '../../helpers/db-util';
+// import { connectDatabase, insertDocument } from '../../helpers/db-util';
+import { MongoClient } from 'mongodb';
+
+async function connectDatabase(){
+  const client = await MongoClient.connect(
+    'mongodb://localhost:27017/trade3dot0');
+    return client;
+}
+
+async function insertDocument(client,document){
+  const db = client.db();
+  await db.collection('newsletter').insertOne({email:userEmail});
+}
 
 async function handler(req, res) {
   if (req.method === 'POST') {

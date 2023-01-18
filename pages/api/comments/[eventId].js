@@ -41,7 +41,8 @@ async function handler(req, res) {
     let result;
 
     try {
-      result = await insertDocument(client, 'comments', newComment);
+      console.log("post METHOD SUCCESS");
+      result = await insertDocument(client, 'userInfoDetails', newComment);
       newComment._id = result.insertedId;
       res.status(201).json({ message: 'Added comment.', comment: newComment });
     } catch (error) {
@@ -51,7 +52,8 @@ async function handler(req, res) {
 
   if (req.method === 'GET') {
     try {
-      const documents = await getAllDocuments(client, 'comments', { _id: -1 });
+      console.log("GET METHOD SUCCESS");
+      const documents = await getAllDocuments(client, 'userInfoDetails', { _id: -1 });
       res.status(200).json({ comments: documents });
     } catch (error) {
       res.status(500).json({ message: 'Getting comments failed.' });
